@@ -120,8 +120,8 @@
         <h1>AI Text Detection</h1>
         <form action="/predict" method="post">
             <div class="form-group">
-                <label for="text">Enter Text:</label>
-                <textarea id="text" name="text" class="form-control" rows="7" placeholder="Type your text here..." required>{{ text if text else '' }}</textarea>
+                <label for="raw_text">Enter Text:</label>
+                <textarea id="text" name="raw_text" class="form-control" rows="7" placeholder="Type your text here..." required>{{ raw_text if raw_text else '' }}</textarea>
             </div>
             <button type="submit">Analyze</button>
         </form>
