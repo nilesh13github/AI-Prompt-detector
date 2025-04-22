@@ -13,9 +13,9 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        text = request.form['text']
+        text = request.form['raw_text']
         result, updated_text = detector(text)
-        return render_template('index.html', prediction=result, text = updated_text)
+        return render_template('index.html', prediction=result, text = updated_text, raw_text = text)
 
 
 if __name__ == '__main__':
