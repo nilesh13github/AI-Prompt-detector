@@ -23,4 +23,4 @@ def detector(text):
 
     total_ai_percentage = ((ai_count/total_count)*100)
 
-    return f"{round(total_ai_percentage, 2)} % AI GENERATED"
+    return f"{round(total_ai_percentage, 2)} % AI Generated"
