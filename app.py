@@ -14,8 +14,8 @@ def home():
 def predict():
     if request.method == 'POST':
         text = request.form['text']
-        result = detector(text)
-        return render_template('index.html', prediction=result)
+        result, updated_text = detector(text)
+        return render_template('index.html', prediction=result, text = updated_text)
 
 
 if __name__ == '__main__':
