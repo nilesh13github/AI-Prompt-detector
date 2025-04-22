@@ -108,6 +108,10 @@
                 font-size: 1rem;
             }
         }
+        .ai-text {
+            color: red;
+            font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -117,14 +121,21 @@
         <form action="/predict" method="post">
             <div class="form-group">
                 <label for="text">Enter Text:</label>
-                <textarea id="text" name="text" class="form-control" rows="5" placeholder="Type your text here..." required></textarea>
+                <textarea id="text" name="text" class="form-control" rows="7" placeholder="Type your text here..." required>{{ text if text else '' }}</textarea>
             </div>
             <button type="submit">Analyze</button>
         </form>
-
+    
         {% if prediction %}
         <div class="prediction {% if 'AI Generated' in prediction %}ai{% else %}human{% endif %}">
-            {{ prediction }}
+            <strong>Prediction:</strong> {{ prediction }}
+        </div>
+        {% endif %}
+    
+        {% if text %}
+        <div class="updated-text">
+            <h3>Possible AI Generated Text:</h3>
+            <div>{{ text | safe }}</div>
         </div>
         {% endif %}
     </div>
